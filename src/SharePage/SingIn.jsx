@@ -7,7 +7,6 @@ const Login = () => {
 
             <div className="flex flex-col items-center justify-center">
                 <div className="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-8 mt-16">
-                    
                     <div className='border p-7'>
                     <p tabindex="0" className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800 pb-5">Login to</p>
 
@@ -55,7 +54,7 @@ const Login = () => {
                     </button>
 
                     <p className="focus:outline-none text-center text-sm mt-4 font-medium leading-none text-gray-500">Don't have account? 
-                    <Link to="../sing-up" className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Sign up here</Link></p>
+                    <Link to="../sign-up" className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Sign up here</Link></p>
                     </div>
                 </div>
             </div>

@@ -24,8 +24,9 @@ export const router = createBrowserRouter([
           path: 'fqa', element: <FAQ />,
         },
         {
-          path: 'courses',
-          element: <Courses />
+          path: 'courses', 
+          element: <Courses />,
+          loader: () => fetch('http://localhost:5000/course'),
         },
         {
           path: 'sign-in',

@@ -7,6 +7,8 @@ import SignIn from "../SharePage/SingIn";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import SignUp from "../Pages/SignUp";
+import Course from "../Pages/Course";
+import Details from "../Pages/Details";
 
 export const router = createBrowserRouter([
     {
@@ -26,7 +28,12 @@ export const router = createBrowserRouter([
         {
           path: 'courses', 
           element: <Courses />,
-          loader: () => fetch('http://localhost:5000/course'),
+          loader: () => fetch('http://localhost:5000/courses'),
+        },
+        {
+          path: `details/:id`, 
+          element: <Details />,
+          loader: ({params}) => fetch(`http://localhost:5000/course${params.id}`),
         },
         {
           path: 'sign-in',

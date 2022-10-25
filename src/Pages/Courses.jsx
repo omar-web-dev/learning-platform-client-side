@@ -6,13 +6,17 @@ import CoursesList from './CoursesList';
 const Courses = () => {
     const courses = useLoaderData()
     return (
-        <div className='courses-page flex mt-16'>
-            <div className=" inset-0 z-0 w-1/4 px-[8%] static">
-                <ul className="menu menu-compact bg-base-100 w-56 p-2 rounded-box px-[8%]">
+        <div className='courses-page block md:flex mt-2 md:mt-16'>
+            <div className=" inset-0 z-0 md:w-1/4 px-[8%] ">
+                <ul className="items-baseline menu menu-compact bg-base-100 w-full flex-wrap  md:w-56 sticky top-16 pr-5 mt-6 md:flex justify-between md:flex-col flex-row">
+                {/* justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    align-content: space-around; */}
                     {courses.map(cl => <CoursesList key={cl.id} cl={cl} />)}
                 </ul>
             </div>
-            <div className="screen grid gap-10 grid-cols-2 items-center justify-center ">
+            <div className="px-4 screen grid gap-10 grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 items-center justify-center ">
                 {courses.map(course => <CourseCard key={course.id} course={course} />)}
             </div>
         </div>

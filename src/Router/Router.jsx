@@ -3,9 +3,9 @@ import Main from "../Layout/Main";
 import Blog from "../Pages/Blog";
 import Courses from "../Pages/Courses";
 import FAQ from "../Pages/FAQ";
+import SignIn from "../SharePage/SingIn";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
-import SignIn from "../Pages/SignIn";
 import SignUp from "../Pages/SignUp";
 
 export const router = createBrowserRouter([

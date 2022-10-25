@@ -1,9 +1,12 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from '../SharePage/Header';
 
 const Main = () => {
     return (
         <div>
-          <h1>this is a  main layout</h1>  
+            <Header />
+            <Outlet />
         </div>
     );
 };

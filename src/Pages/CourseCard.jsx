@@ -5,7 +5,6 @@ const CourseCard = ({ course }) => {
     console.log(course);
     const { name, price, lesson, description, img, review } = course
     return (
-        <div>
             <div className="max-w-md w-full text-gray-600 shadow-lg rounded-xl p-6">
                 <div className="flex flex-col ">
                     <div className="relative h-62 w-full mb-3">
@@ -46,7 +45,6 @@ const CourseCard = ({ course }) => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

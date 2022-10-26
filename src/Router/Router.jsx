@@ -8,6 +8,7 @@ import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import SignUp from "../Pages/SignUp";
 import Details from "../Pages/Details";
+import ErrorPage from "../Pages/ErorrPage";
 
 export const router = createBrowserRouter([
     {
@@ -51,6 +52,6 @@ export const router = createBrowserRouter([
           element: <Profile />
         },
       ],
-      errorElement: 'this is a error page'
+      errorElement: <ErrorPage/>
     }
   ])

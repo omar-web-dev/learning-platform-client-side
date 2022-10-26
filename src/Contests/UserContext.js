@@ -13,7 +13,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app)
 const UserContext = ({ children }) => {
     const [lording, setLording] = useState(true)
-    const [users, setUser] = useState()
+    const [users, setUsers] = useState()
 
 
     const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
@@ -29,17 +29,22 @@ const UserContext = ({ children }) => {
         return (auth.currentUser, profile)
     }
 
+    const logOut = () => {
+        setLording(true)
+        signOut(auth)
+    }
+
     
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log( currentUser);
-            setUser(currentUser)
+            setUsers(currentUser)
             setLording(false)
         })
         return ()=> unSubscribe();
     },[])
 
-    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate }
+    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate, logOut }
 
     return (
         <section className='user-context-section'>

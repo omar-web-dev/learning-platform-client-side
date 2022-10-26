@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 const CourseCard = ({ course }) => {
     const { id, name, price, lesson, description, img, review } = course
 
-    const handelDynamic = () => {
-        console.log(id, "click");
-
-    }
+    
     return (
         <div className="max-w-md w-full text-gray-600 shadow-lg rounded-xl p-6">
             <div className="flex flex-col ">
@@ -46,8 +43,8 @@ const CourseCard = ({ course }) => {
                             lesson {lesson}
                         </div>
                     </div>
-                    <Link to={`/details/${id}`}>
-                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center' onClick={handelDynamic}>Buy Now </span></button>
+                    <Link to={`/course/${id}`}>
+                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Buy Now </span></button>
                     </Link>
                 </div>
             </div>

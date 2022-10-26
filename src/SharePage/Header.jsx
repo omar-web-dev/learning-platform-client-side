@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Contests/UserContext';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext)
+    const { users, logOut } = useContext(AuthContext)
     const handelLogOut = () => {
         logOut()
         .then(result => {
@@ -51,17 +51,16 @@ const Header = () => {
                         <li><NavLink className="block md:inline-block py-2 px-3 text-lg  hover:bg-yellow-700 rounded-md" to="/sign-in">
                             <div className="flex items-center relative cursor-pointer whitespace-nowrap">Sign In</div></NavLink></li>
                     </ul>
-                    {user?.uid &&
+                    {users?.uid &&
                         <>
                             <div   className="avatar">
-                                {/* {user.uid && <p>SuccessFull Login</p>} */ console.log(user)}
                                 <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                    <img src={user?.photoURL} alt={user?.displayName}/>
+                                    <img src={users?.photoURL} alt={users?.displayName}/>
                                 </div>
                             </div>
                             <ul id='profile' className=" absolute top-12 right-20 menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                                {user?.displayName &&
-                                    <li><Link>{user?.displayName}</Link></li>
+                                {users?.displayName &&
+                                    <li><Link>{users?.displayName}</Link></li>
                                 }
                                 <li><Link>View Profile</Link></li>
                                 <li><Link onClick={handelLogOut}>Log Out</Link></li>

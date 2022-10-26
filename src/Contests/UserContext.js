@@ -4,6 +4,7 @@ import {
     getAuth, 
     onAuthStateChanged, 
     signInWithEmailAndPassword, 
+    signInWithPopup, 
     signOut 
 } from "firebase/auth";
 import app from '../firebase/firebase.confic';
@@ -22,6 +23,12 @@ const UserContext = ({ children }) => {
 
     const userSignOut = () => signOut(auth)
 
+    const googleLongIn = provider =>{
+        setLording(true)
+        return signInWithPopup(auth, provider)
+    }
+
+
     
     const userProfileUpdate = (profile) => {
         console.log(profile);
@@ -37,14 +44,13 @@ const UserContext = ({ children }) => {
     
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log( currentUser);
             setUsers(currentUser)
             setLording(false)
         })
         return ()=> unSubscribe();
     },[])
 
-    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate, logOut }
+    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate, logOut, googleLongIn}
 
     return (
         <section className='user-context-section'>

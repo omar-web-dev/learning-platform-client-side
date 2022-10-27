@@ -51,7 +51,7 @@ const UserContext = ({ children }) => {
         return ()=> unSubscribe();
     },[])
 
-    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate, logOut, googleLongIn,}
+    const userInfo = { users, createUser, userSingIn, userSignOut,lording,  userProfileUpdate, logOut, googleLongIn,}
 
     return (
         <section className='user-context-section'>

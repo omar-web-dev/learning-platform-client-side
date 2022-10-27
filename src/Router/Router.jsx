@@ -9,6 +9,8 @@ import Profile from "../Pages/Profile";
 import SignUp from "../Pages/SignUp";
 import Details from "../Pages/Details";
 import ErrorPage from "../Pages/ErorrPage";
+import Premium from "../Pages/Premium";
+import PrivetRoute from "./PrivetRoute";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +36,11 @@ export const router = createBrowserRouter([
           path: 'course/:id', 
           loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
           element: <Details />,
+        },
+        {
+          path: 'premium/:id', 
+          loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
+          element: <PrivetRoute><Premium /></PrivetRoute>,
         },
         {
           path: 'sign-in',

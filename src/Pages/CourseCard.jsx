@@ -3,7 +3,7 @@ import { RiPlayCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
-    const { id, name, price, part, description, img, review } = course
+    const { id, price, part, description, img, review } = course
 
     
     return (
@@ -47,7 +47,7 @@ const CourseCard = ({ course }) => {
                     <Link to={`/course/${id}`}>
                         <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Details </span></button>
                     </Link>
-                    <Link >
+                    <Link to={`/premium/${id}`}>
                         <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Get premium access </span></button>
                     </Link>
                     </div>

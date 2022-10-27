@@ -3,7 +3,7 @@ import { RiPlayCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 
 const CourseCard = ({ course }) => {
-    const { id, name, price, lesson, description, img, review } = course
+    const { id, name, price, part, description, img, review } = course
 
     
     return (
@@ -39,7 +39,7 @@ const CourseCard = ({ course }) => {
                     </div>
                     <div className='flex justify-between items-center'>
                         <div className="flex space-x-2 text-sm font-medium justify-start">
-                            lesson {lesson}
+                            lesson {part}
                         </div>
                         <div className="text-xl text-gray-900 font-semibold mt-1">${price}</div>
                     </div>

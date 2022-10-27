@@ -38,14 +38,19 @@ const CourseCard = ({ course }) => {
                         </div>
                     </div>
                     <div className='flex justify-between items-center'>
-                        <div className="text-xl text-gray-900 font-semibold mt-1">${price}</div>
                         <div className="flex space-x-2 text-sm font-medium justify-start">
                             lesson {lesson}
                         </div>
+                        <div className="text-xl text-gray-900 font-semibold mt-1">${price}</div>
                     </div>
+                    <div className='flex justify-between'>
                     <Link to={`/course/${id}`}>
-                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Buy Now </span></button>
+                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Details </span></button>
                     </Link>
+                    <Link >
+                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Get premium access </span></button>
+                    </Link>
+                    </div>
                 </div>
             </div>
         </div>

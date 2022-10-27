@@ -9,16 +9,16 @@ const Details = () => {
     const detail = useLoaderData()
     const { requirement, title, description, reviews } = detail
     return (
-        <div className='flex pl-[7%] pr-[3%]'>
-            <div className='  w-3/4'>
+        <div className='block md:flex p-5 md:pl-[7%] md:pr-[3%]'>
+            <div className='  md:w-3/4'>
                 {/* bg-[url("https://i.ibb.co/fkP9kPs/Rectangle-1.png")] */}
                 <div className=' bg-no-repeat bg-cover no-react '>
                     <div className='my-bg-image p-[6%] relative justify-center items-center' >
                         <div className='pt-5 pb-5'>
                             <div className='flex justify-between'>
                                 <h2 className='text-xl  '>{title}</h2>
-                                <div className='flex  border border-blue-500'>
-                                    <div className='border-r border-blue-500 text-blue-500 p-2'>FREE PDF</div>
+                                <div className='flex h-10 border border-blue-500'>
+                                    <div className='hidden border-r w-24 border-blue-500 text-blue-500 p-2'>FREE PDF</div>
                                     <button onClick={notify} className=' p-2  text-blue-500  hover:text-blue-600'>
                                         <FaFileDownload className='w-5 h-5' />
                                     </button>
@@ -50,7 +50,7 @@ const Details = () => {
                     </div>
                 </div>
             </div>
-            <div className=' w-1/4'>
+            <div className=' md:w-1/4'>
                 <h2 className='p-3 text-xl font-bold'>Review</h2>
                 {reviews.map(rw => <Review review={rw} />)}
             </div>

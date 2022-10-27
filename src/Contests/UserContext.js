@@ -30,12 +30,19 @@ const UserContext = ({ children }) => {
         return signInWithPopup(auth, provider)
     }
 
+    const githubLongIn = provider =>{
+        setLording(true)
+        return signInWithPopup(auth, provider)
+    }
+
 
     
     const userProfileUpdate = (profile) => {
         setLording(true)
         return updateProfile(auth.currentUser, profile)
     }
+
+
 
     const logOut = () => {
         setLording(true)
@@ -51,7 +58,7 @@ const UserContext = ({ children }) => {
         return ()=> unSubscribe();
     },[])
 
-    const userInfo = { users, createUser, userSingIn, userSignOut,lording,  userProfileUpdate, logOut, googleLongIn,}
+    const userInfo = { users, createUser, userSingIn, userSignOut, lording, githubLongIn, userProfileUpdate, logOut, googleLongIn,}
 
     return (
         <section className='user-context-section'>

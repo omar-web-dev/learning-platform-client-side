@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../SharePage/Header';
 
 
 const Blog = () => {
   return (
     <>
-      <Header />
       <div className='blog-page mt-5'>
         <div className=" dark:text-gray-100 px-5">
 

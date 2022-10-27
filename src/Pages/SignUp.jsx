@@ -63,7 +63,6 @@ const SignUp = () => {
     console.log(error);
     return (
         <>
-        <Header/>
         <div className='sign-up-page'>
             <section className="bg-[#F4F7FF] py-5 ">
                 <div className="container">

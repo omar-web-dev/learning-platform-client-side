@@ -2,7 +2,6 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contests/UserContext';
-import Header from './Header';
 
 const Login = () => {
     const provider = new GoogleAuthProvider();
@@ -44,7 +43,6 @@ const Login = () => {
     }
     return (
         <>
-            <Header />
             <div className="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
 
                 <div className="flex flex-col items-center justify-center">

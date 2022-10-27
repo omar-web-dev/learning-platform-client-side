@@ -33,8 +33,13 @@ const HeaderHome = () => {
                                     <div className="flex items-center relative text-lg cursor-pointer whitespace-nowrap">FQA</div></NavLink></li>
                             <li><NavLink className="block md:inline-block py-2 px-3 text-lg hover:bg-yellow-700 rounded-md" to="/blog">
                                 <div className="flex items-center relative cursor-pointer whitespace-nowrap">Blog</div></NavLink></li>
-                            <li><NavLink className="block md:inline-block py-2 px-3 text-lg  hover:bg-yellow-700 rounded-md" to="/sign-in">
-                                <div className="flex items-center relative cursor-pointer whitespace-nowrap">Sign In</div></NavLink></li>
+                            <li>
+                                <NavLink className="block md:inline-block py-2 px-3 text-lg  hover:bg-yellow-700 rounded-md" to="/sign-in">
+                                    <div className="flex items-center relative cursor-pointer whitespace-nowrap">Sign In</div></NavLink>
+
+                            </li>
+
+
                             {!users?.uid ?
                                 <ul className="menu menu-horizontal p-0">
                                     <li>
@@ -71,11 +76,11 @@ const HeaderHome = () => {
                         <img className='w-28' src="https://i.ibb.co/vhxyr49/Innovation-Hub-Logo-rgb.png" alt="Innovation-Hub-Logo" />
                     </Link>
                     <ul className="menu menu-horizontal p-0">
-                    <li>
-                                <NavLink className="text-gray-800 hover:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none" to="/home">
-                                    Home
-                                </NavLink>
-                            </li>
+                        <li>
+                            <NavLink className="text-gray-800 hover:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none" to="/home">
+                                Home
+                            </NavLink>
+                        </li>
                         <li>
                             <NavLink className="text-gray-800 hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/courses">
                                 Courses
@@ -92,23 +97,35 @@ const HeaderHome = () => {
                             </NavLink>
                         </li>
 
-                    </ul>
-                    {!users?.uid ?
-                    <ul className="menu menu-horizontal p-0">
-                        <li>
-                            <NavLink className="text-gray-800 hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/sign-in">
-                                Log in
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900" to="/sign-up">
-                                Registration
-                            </NavLink>
-                        </li>
 
                     </ul>
-                    :
-                    users?.uid &&
+                    {!users?.uid ?
+                        <ul className="menu menu-horizontal p-0">
+                            <li>
+                                <NavLink className="text-gray-800 hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/sign-in">
+                                    Log in
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900" to="/sign-up">
+                                    Registration
+                                </NavLink>
+                            </li>
+                            <li>
+                                <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                                    <span className='text-gray-800'>light</span>
+                                    <span className="relative">
+                                        <input id="Toggle1" type="checkbox" className="hidden peer" />
+                                        <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
+                                        <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                                    </span>
+                                    <span className='text-gray-800'>dark</span>
+                                </label>
+                            </li>
+
+                        </ul>
+                        :
+                        users?.uid &&
                         <>
                             <div className="avatar">
                                 <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -121,6 +138,17 @@ const HeaderHome = () => {
                                 }
                                 <li><Link>View Profile</Link></li>
                                 <li><Link onClick={handelLogOut}>Log Out</Link></li>
+                                <li>
+                                    <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                                        <span className='text-gray-800'>light</span>
+                                        <span className="relative">
+                                            <input id="Toggle1" type="checkbox" className="hidden peer" />
+                                            <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
+                                            <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                                        </span>
+                                        <span className='text-gray-800'>dark</span>
+                                    </label>
+                                </li>
                             </ul>
                         </>}
                 </div>

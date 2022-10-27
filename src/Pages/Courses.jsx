@@ -8,7 +8,6 @@ const Courses = () => {
     const courses = useLoaderData()
     return (
         <>
-        <Header/>
         <div className='courses-page block md:flex mt-2 md:mt-16'>
             <div className=" inset-0 z-0 md:w-1/4 px-[8%] ">
                 <ul className="items-baseline menu menu-compact bg-base-100 w-full flex-wrap  md:w-56 sticky top-16 pr-5 mt-6 md:flex justify-between md:flex-col flex-row">

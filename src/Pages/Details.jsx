@@ -2,14 +2,17 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { FaFileDownload, FaHandPointRight } from "react-icons/fa";
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
 import Review from './Review';
 
+const ref = React.createRef();
 const Details = () => {
     const notify = () => toast("Downtrod Stat!");
     const detail = useLoaderData()
     const { requirement, title, description, reviews } = detail
     return (
-        <div className='block md:flex p-5 md:pl-[7%] md:pr-[3%]'>
+        <div ref={ref} className='block md:flex p-5 md:pl-[7%] md:pr-[3%]'>
             <div className='  md:w-3/4'>
                 {/* bg-[url("https://i.ibb.co/fkP9kPs/Rectangle-1.png")] */}
                 <div className=' bg-no-repeat bg-cover no-react '>
@@ -19,10 +22,17 @@ const Details = () => {
                                 <h2 className='text-xl  '>{title}</h2>
                                 <div className='flex h-10 border border-blue-500'>
                                     <div className='hidden border-r w-24 border-blue-500 text-blue-500 p-2'>FREE PDF</div>
-                                    <button onClick={notify} className=' p-2  text-blue-500  hover:text-blue-600'>
-                                        <FaFileDownload className='w-5 h-5' />
-                                    </button>
-                                    <ToastContainer  position="top-center" />
+
+                                    <Pdf targetRef={ref} filename="full-course.pdf">
+                                        {({ toPdf }) => <button onClick={toPdf}>
+                                            <button onClick={notify} className=' p-2  text-blue-500  hover:text-blue-600'>
+                                                <FaFileDownload className='w-5 h-5' />
+                                            </button>
+                                        </button>}
+                                    </Pdf>
+
+
+                                    <ToastContainer position="top-center" />
                                 </div>
                             </div>
                             <div>

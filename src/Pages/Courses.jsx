@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import Header from '../SharePage/Header';
 import CourseCard from './CourseCard';
 import CoursesList from './CoursesList';
 

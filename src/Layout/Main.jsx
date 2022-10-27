@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Footer from '../Pages/Footer';
+import Footer from '../SharePage/Footer';
 import Header from '../SharePage/Header';
 
 const Main = () => {

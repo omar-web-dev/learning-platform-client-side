@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip';
 import { AuthContext } from '../Contests/UserContext';
+import ReactDOMServer from 'react-dom/server';
 
 const HeaderHome = () => {
     const { users, logOut } = useContext(AuthContext)
@@ -137,6 +139,7 @@ const HeaderHome = () => {
                                     <li><Link>{users?.displayName}</Link></li>
                                 }
                                 <li><Link>View Profile</Link></li>
+                                
                                 <li><Link onClick={handelLogOut}>Log Out</Link></li>
                                 <li>
                                     <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">

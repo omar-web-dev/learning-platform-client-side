@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CourseCard = ({ course }) => {
     const { id, price, part, description, img, review } = course
 
-    
+
     return (
         <div className="max-w-md w-full text-gray-600 shadow-lg rounded-xl p-6">
             <div className="flex flex-col ">
@@ -44,12 +44,16 @@ const CourseCard = ({ course }) => {
                         <div className="text-xl text-gray-900 font-semibold mt-1">${price}</div>
                     </div>
                     <div className='flex justify-between'>
-                    <Link to={`/course/${id}`}>
-                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Details </span></button>
-                    </Link>
-                    <Link to={`/premium/${id}`}>
-                        <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Get premium access </span></button>
-                    </Link>
+                        <Link to={`/course/${id}`}>
+                            <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 "><span className='w-full text-center'>Details </span></button>
+                        </Link>
+                        <Link to={`/premium/${id}`}>
+                            <button className="w-full transition ease-in duration-300 inline-flex items-center text-md font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-md mt-2 hover:bg-purple-600 ">
+                                <span className='w-full text-center'>
+                                    Get premium access
+                                </span>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

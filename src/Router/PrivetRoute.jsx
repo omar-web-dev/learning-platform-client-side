@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Contests/UserContext";
 
 const PrivetRoute = ({ children }) => {
-    const { user, lording } = useContext(AuthContext)
+    const { users, lording } = useContext(AuthContext)
     const location = useLocation()
 
     if (lording) {
@@ -12,7 +12,7 @@ const PrivetRoute = ({ children }) => {
                     <div className="w-20 h-20 border-purple-700 border-t-2 animate-spin rounded-full absolute left-0 top-0"></div>
                 </div>
     }
-    if (!user) {
+    if (!users) {
         return <Navigate to="/sign-in" state={{ from : location }} replace></Navigate>
     }
     return children

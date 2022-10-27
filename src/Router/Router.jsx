@@ -30,16 +30,16 @@ export const router = createBrowserRouter([
         {
           path: 'courses', 
           element: <Courses />,
-          loader: () => fetch('http://localhost:5000/courses'),
+          loader: () => fetch('https://assingment-10-server.vercel.app/courses'),
         },
         {
           path: 'course/:id', 
-          loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
+          loader: ({params}) => fetch(`https://assingment-10-server.vercel.app/course/${params.id}`),
           element: <Details />,
         },
         {
           path: 'premium/:id', 
-          loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
+          loader: ({params}) => fetch(`https://assingment-10-server.vercel.app/course/${params.id}`),
           element: <PrivetRoute><Premium /></PrivetRoute>,
         },
         {

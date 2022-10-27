@@ -14,7 +14,7 @@ const HeaderHome = () => {
             });
     }
     return (
-        <nav className='bg-white border-gray-200 border lg:px-[10%] py-2.5 text-gray-900'>
+        <nav className='bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 '>
             <div className="navbar p-0 block">
                 <div className="lg:hidden flex justify-between">
 
@@ -24,7 +24,7 @@ const HeaderHome = () => {
                         </label>
                         <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-[290px] text-center">
                             <li>
-                                <NavLink className="text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/courses">
+                                <NavLink className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" to="/courses">
                                     Courses
                                 </NavLink>
                             </li>
@@ -72,31 +72,30 @@ const HeaderHome = () => {
                     </Link>
                     <ul className="menu menu-horizontal p-0">
                     <li>
-                                <NavLink className="text-gray-800 hover:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none" to="/home">
+                                <NavLink className="text-gray-800 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" to="/home">
                                     Home
                                 </NavLink>
                             </li>
                         <li>
-                            <NavLink className="text-gray-800 hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/courses">
+                            <NavLink className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" to="/courses">
                                 Courses
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="text-gray-800 hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/fqa">
+                            <NavLink className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" to="/fqa">
                                 FQA
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink className="text-gray-800 active:text-white hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/blog">
+                            <NavLink className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" to="/blog">
                                 Blog
                             </NavLink>
                         </li>
 
                     </ul>
-                    {!users?.uid ?
                     <ul className="menu menu-horizontal p-0">
                         <li>
-                            <NavLink className="text-gray-800 hover:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none " to="/sign-in">
+                            <NavLink className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" to="/sing-in">
                                 Log in
                             </NavLink>
                         </li>
@@ -107,8 +106,7 @@ const HeaderHome = () => {
                         </li>
 
                     </ul>
-                    :
-                    users?.uid &&
+                    {users?.uid &&
                         <>
                             <div className="avatar">
                                 <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

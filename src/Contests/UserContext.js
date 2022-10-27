@@ -5,13 +5,15 @@ import {
     onAuthStateChanged, 
     signInWithEmailAndPassword, 
     signInWithPopup, 
-    signOut 
+    signOut, 
+    updateProfile
 } from "firebase/auth";
 import app from '../firebase/firebase.confic';
 
 
 export const AuthContext = createContext();
 const auth = getAuth(app)
+
 const UserContext = ({ children }) => {
     const [lording, setLording] = useState(true)
     const [users, setUsers] = useState()
@@ -31,9 +33,8 @@ const UserContext = ({ children }) => {
 
     
     const userProfileUpdate = (profile) => {
-        console.log(profile);
         setLording(true)
-        return (auth.currentUser, profile)
+        return updateProfile(auth.currentUser, profile)
     }
 
     const logOut = () => {
@@ -50,7 +51,7 @@ const UserContext = ({ children }) => {
         return ()=> unSubscribe();
     },[])
 
-    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate, logOut, googleLongIn}
+    const userInfo = { users, createUser, userSingIn, userSignOut, userProfileUpdate, logOut, googleLongIn,}
 
     return (
         <section className='user-context-section'>

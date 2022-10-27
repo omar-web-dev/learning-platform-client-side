@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contests/UserContext';
+import Header from '../SharePage/Header';
 // import { Link } from 'react-router-dom';
 // import { AuthContext } from './Context/UseContext';
 
@@ -11,6 +12,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
     const [status, setStatus] = useState('')
+    
     
 
     const handelSignUp = (e) => {
@@ -57,22 +59,21 @@ const SignUp = () => {
         setError('')
         setEmail(email)
     }
+
+    console.log(error);
     return (
+        <>
+        <Header/>
         <div className='sign-up-page'>
             <section className="bg-[#F4F7FF] py-5 ">
                 <div className="container">
                     <div className="-mx-4 flex flex-wrap">
                         <div className="w-full px-4">
-                            <div
-                                className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]"
-                            >
-                                <div className="mb-5 text-center md:mb-10">
-                                    <Link to='/' className="mx-auto inline-block max-w-[160px]" >
-                                        <img src={'https://i.ibb.co/bBYvKvD/logo.png'} alt="logo" />
-                                    </Link>
-                                </div>
+                            <div className="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-16 px-10 text-center sm:px-12 md:px-[60px]" >
                                 <form onSubmit={handelSignUp}>
                                     <div className="mb-6">
+                                        {error && 
+                                        <p className='pb-2 text-red-500'>{error == "auth/email-already-in-use"? "This Email Already Use" : error }</p>}
                                         <input type="text"
                                             name='name'
                                             placeholder="Name"
@@ -349,6 +350,8 @@ const SignUp = () => {
                 </div>
             </section>
         </div>
+        </>
+
     );
 };
 

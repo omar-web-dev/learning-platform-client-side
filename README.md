@@ -69,3 +69,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # b610-learning-platform-client-side-omar-web-dev
+# https://fascinating-kelpie-783df5.netlify.app/sign-in
